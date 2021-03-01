@@ -7,7 +7,7 @@ use SujalPatel\IntToEnglish\IntToEnglish;
 
 
 if(isset($_POST['calcular'])){
-    $L_Punto1 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
+    $L_Punto1 =htmlspecialchars ($_POST['n_enteroo'], ENT_QUOTES, 'UTF-8');
     $L_Punto2 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
     $L_Punto3 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
     $L_Punto4 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
