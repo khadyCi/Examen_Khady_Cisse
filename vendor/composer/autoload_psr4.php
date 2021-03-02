@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SujalPatel\\IntToEnglish\\' => array($vendorDir . '/sujalpatel/inttoenglish/src'),
-    'Ballen\\Distical\\' => array($vendorDir . '/ballen/distical/src'),
+    'StringToColor\\' => array($vendorDir . '/kyosifov/php-string-to-color/app'),
+    'KKiernan\\' => array($vendorDir . '/kkiernan/caesar-cipher/src/KKiernan'),
 );

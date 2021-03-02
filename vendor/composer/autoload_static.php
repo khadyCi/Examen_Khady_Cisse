@@ -4,27 +4,27 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit55bd7abbe4f3aedb3da494be649cd205
+class ComposerStaticInitba31c6b9e964e22fa5b474cec8f44edb
 {
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'SujalPatel\\IntToEnglish\\' => 24,
+            'StringToColor\\' => 14,
         ),
-        'B' => 
+        'K' => 
         array (
-            'Ballen\\Distical\\' => 16,
+            'KKiernan\\' => 9,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'SujalPatel\\IntToEnglish\\' => 
+        'StringToColor\\' => 
         array (
-            0 => __DIR__ . '/..' . '/sujalpatel/inttoenglish/src',
+            0 => __DIR__ . '/..' . '/kyosifov/php-string-to-color/app',
         ),
-        'Ballen\\Distical\\' => 
+        'KKiernan\\' => 
         array (
-            0 => __DIR__ . '/..' . '/ballen/distical/src',
+            0 => __DIR__ . '/..' . '/kkiernan/caesar-cipher/src/KKiernan',
         ),
     );
 
@@ -35,9 +35,9 @@ class ComposerStaticInit55bd7abbe4f3aedb3da494be649cd205
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit55bd7abbe4f3aedb3da494be649cd205::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit55bd7abbe4f3aedb3da494be649cd205::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit55bd7abbe4f3aedb3da494be649cd205::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitba31c6b9e964e22fa5b474cec8f44edb::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitba31c6b9e964e22fa5b474cec8f44edb::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitba31c6b9e964e22fa5b474cec8f44edb::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -1,6 +1,6 @@
 {
     "require": {
-        "ballen/distical": "^2.0",
-        "sujalpatel/inttoenglish": "^1.0"
+        "kkiernan/caesar-cipher": "^1.3",
+        "kyosifov/php-string-to-color": "^1.0"
     }
 }

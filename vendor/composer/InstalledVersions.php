@@ -33,23 +33,23 @@ private static $installed = array (
       ),
       'reference' => NULL,
     ),
-    'ballen/distical' => 
+    'kkiernan/caesar-cipher' => 
     array (
-      'pretty_version' => '2.0.7',
-      'version' => '2.0.7.0',
+      'pretty_version' => 'v1.3',
+      'version' => '1.3.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'b9383462e68fa0ce6f2be4a51ba8777545e82fe5',
+      'reference' => '30ef5e634ac1405be9c7c475d8401e298724cbe1',
     ),
-    'sujalpatel/inttoenglish' => 
+    'kyosifov/php-string-to-color' => 
     array (
-      'pretty_version' => 'v1.0.4',
-      'version' => '1.0.4.0',
+      'pretty_version' => '1.0.0',
+      'version' => '1.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9704d0c2051cb63f6c4a35e42adc80081cd309f6',
+      'reference' => '8a4a19bb72e666a957705251c2ad6933af51f324',
     ),
   ),
 );

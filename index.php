@@ -1,40 +1,30 @@
 <?php
-use  Ballen \ Distical \ Calculator  ;
-use  Ballen \ Distical \ Entities \ LatLong ;
-use SujalPatel\IntToEnglish\IntToEnglish;
-
-
-
-
-if(isset($_POST['calcularrr'])){
-    $L_Punto1 =htmlspecialchars ($_POST['n_enteroo'], ENT_QUOTES, 'UTF-8');
-    $L_Punto2 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
-    $L_Punto3 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
-    $L_Punto4 =htmlspecialchars ($_POST['n_entero'], ENT_QUOTES, 'UTF-8');
-
-    $Valladolid = new  LatLong ( $L_Punto1 , $L_Punto2 );
-    $Sevilla = new  LatLong ( $L_Punto3 , $L_Punto4 );
-
+use KKiernan\CaesarCipher;
+use StringToColor\Support\ColorParser;
+$encrypted="";
+$stringToColor="";
+$decrypted="";
+if (isset($_REQUEST['cifrar']))
+{
     
     
-
-    // Obtener la distancia entre estas dos coordenadas Lat / Long ... 
-    $distanceCalculator = new  Calculator ( $Valladolid , $Sevilla );
-
-    // Luego puede calcular la distancia ... 
-    $distancia = $distanciaCalculadora -> get ();
-
-    echo IntToEnglish::Int2Eng($distancia);
-    
+    require __DIR__ . '/vendor/autoload.php';
+        
+    $cipher = new CaesarCipher();
+    $mensaje_original=$_POST['mensaje_original'];
+    $desplazamiento=$_POST['desplazamiento'];
+    //$key = 12;
+    $encrypted = $cipher->encrypt($mensaje_original,$desplazamiento );
+    //echo $encrypted."\n";
+    $decrypted = $cipher->decrypt($encrypted, $desplazamiento);
+    //echo $decrypted."\n";
+    $stringToColor = new \StringToColor\StringToColor();
+    $stringToColor = $stringToColor->handle($encrypted);
+    //echo $stringToColor;
 }
 
-
-
-
-
-
-
 echo'
+
 <!DOCTYPE html>
 <html>
 
@@ -50,7 +40,7 @@ echo'
     <meta charset="UTF-8">
 </head>
 
-<body>
+<body style="background-color:'.$stringToColor.';">
 
 
     <div class="row">
@@ -59,21 +49,19 @@ echo'
             <h4>Examen Despliegue Aplicaciones Web</h4>
         </div>
         
-        <div class="col s12  ">
+        <div class="col s9  ">
             
-            <p>Lo que vamos a realizar es una aplicacion en PHP, que realize lo siguiente:
-            <ol>
-            <li>Dado dos puntos calcular la distancia entre ellos. Esos puntos vendran marcados por su latitud y su longitud </li>
-            <li>Una vez halla calculado la distancia quiero que me traduzca al ingles esa distancia.</li>
-            </ol>
+            <p>En criptografía, el cifrado César ( Packagist --> kkiernan/caesar-cipher), también conocido como cifrado por desplazamiento, 
+            código de César o desplazamiento de César, es una de las técnicas de cifrado más simples y más usadas. 
+            Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra 
+            letra que se encuentra un número fijo de posiciones más adelante en el alfabeto.
+            <br>
+            Por ejemplo, con un desplazamiento de 3, la A sería sustituida por la D (situada 3 lugares a la derecha de la A),
+            la B sería reemplazada por la E, etc.<br>
             </p>
-            <p>
-            Por ejemplo dadas las siguientes coordenadas:
-            <ul>
-            <li>(41.65518, -4.72372) corresponde a Valladolid </li>
-            <li>(37.38283, -5.97317) corresponde a Sevilla </li>
-            </ul>
-            
+            <p align="center">
+               <img src="imagenes/cesar.jpg" alt="cesar" width="270" height="120" />
+
             </p>
         
             
@@ -82,44 +70,52 @@ echo'
                     <h5>Enlace Heroku </h5>
                     Pulsa sobre esta imagen para ver desplegada la aplicacion sobre heroku
                     <p>
-                    <a title="Heroku" href="https://examenkhadycisse.herokuapp.com/"><img src="imagenes/heroku.png" alt="Heroku" width="120" height="120" /></a>
+                    <a title="Heroku" href=""><img src="imagenes/heroku.png" alt="Heroku" width="100" height="100" /></a>
                     </p>
         </aside>
-        <form class="col s12" method = "POST" action="">
-            <div class="row">
-                
-                <div class="input-field col s2">
-                    <label for="n_entero">Introduce la Latitud Punto 1:</label>
-                    <input name="n_entero" type="text" class="validate">
-                    
+        <form class="col s12" method="POST" action="index.php">
+        <div class="row">
+            <!-- el "for" del label tiene que asociarse a la ID del input, no al nombre,
+                 sino, al hacer click sobre el texto en el navegador, este no se quita para escribir -->
+            <div class="col s12">
+                <div class="input-field col s7">
+                    <label for="mensaje_original">Mensaje a Cifrar</label>
+                    <input name="mensaje_original" type="text" class="validate" id="mensaje_original" required>
                 </div>
-                <div class="input-field col s2">
-                    <label for="n_entero">Introduce la Longitud  Punto 1:</label>
-                    <input name="n_entero" type="text" class="validate">
-                
+               
+                <div class="input-field col s1">
+                    <label for="desplazamiento">Desplazamiento </label>
+                    <input name="desplazamiento" type="text" class="validate" id="desplazamiento" required>
+                   
                 </div>
-                <div class="input-field col s2">
-                    <label for="n_entero">Introduce la Latitud Punto 2:</label>
-                    <input name="n_entero" type="text" class="validate">
-                
-                </div>
-                <div class="input-field col s2">
-                    <label for="n_entero">Introduce la Longitud  Punto 2:</label>
-                    <input name="n_entero" type="text" class="validate">
-                
-                </div>
+            </div>
+            
                
 
                 <div class="row "></div> <!-- linea en blanco -->
                 <div class="col s4">
 
-                    <button class="btn waves-effect waves-light" type="submit" name="calcular">Calcular
+                    <button class="btn waves-effect waves-light" type="submit" name="cifrar">Cifrar
 
                     </button>
 
                 </div>
+
+                <div class="col s12">
+                    <div class="input-field col s7">
+                        <label for="mensaje_cifrado">Mensaje Cifrado</label>
+                        <input name="mensaje_cifrado" type="text" class="validate" value="'.$encrypted.'" >
+                    </div>
+                    <div class="input-field col s7">
+                        <label for="color">Color asociado a el mensaje Original ( https://github.com/gomzyakov/string-to-color )</label>
+                        <input name="color" type="text" class="validate" value="'.$stringToColor.'" >
+                    </div>
+                </div>
+               
                 
             </div>
+                
+        </div>
         </form>
     </div>
     <!--JavaScript at end of body for optimized loading-->
@@ -127,5 +123,6 @@ echo'
 </body>
 
 </html>';
+
 
 

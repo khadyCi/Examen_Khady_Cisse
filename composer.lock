@@ -4,100 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a27c44604cc7c074f6b0504f3608b6c0",
+    "content-hash": "6eb14ef6d2adb4432611c4e84de03e87",
     "packages": [
         {
-            "name": "ballen/distical",
-            "version": "2.0.7",
+            "name": "kkiernan/caesar-cipher",
+            "version": "v1.3",
             "source": {
                 "type": "git",
-                "url": "https://github.com/allebb/distical.git",
-                "reference": "b9383462e68fa0ce6f2be4a51ba8777545e82fe5"
+                "url": "https://github.com/kkiernan/caesar-cipher-php.git",
+                "reference": "30ef5e634ac1405be9c7c475d8401e298724cbe1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/allebb/distical/zipball/b9383462e68fa0ce6f2be4a51ba8777545e82fe5",
-                "reference": "b9383462e68fa0ce6f2be4a51ba8777545e82fe5",
+                "url": "https://api.github.com/repos/kkiernan/caesar-cipher-php/zipball/30ef5e634ac1405be9c7c475d8401e298724cbe1",
+                "reference": "30ef5e634ac1405be9c7c475d8401e298724cbe1",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.3.0"
-            },
             "require-dev": {
-                "phpunit/phpunit": "4.8.*"
+                "phpspec/phpspec": "^2.4"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Ballen\\Distical\\": "src/"
+                    "KKiernan\\": "src/KKiernan"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
-            "authors": [
-                {
-                    "name": "ballen",
-                    "email": "ballen@bobbyallen.me",
-                    "homepage": "http://bobbyallen.me",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A distance (Lat/Long) calculation library for PHP",
-            "homepage": "http://github.com/bobsta63/distical",
-            "keywords": [
-                "calculator",
-                "distance",
-                "gps",
-                "lat",
-                "latitude",
-                "lng",
-                "long",
-                "longditude",
-                "mapping"
-            ],
+            "description": "Encrypt, decrypt and crack messages using the simple Caesar Cipher algorithm.",
             "support": {
-                "issues": "https://github.com/allebb/distical/issues",
-                "source": "https://github.com/allebb/distical/tree/master"
+                "issues": "https://github.com/kkiernan/caesar-cipher-php/issues",
+                "source": "https://github.com/kkiernan/caesar-cipher-php/tree/master"
             },
-            "time": "2020-02-12T19:03:38+00:00"
+            "time": "2017-05-05T12:13:55+00:00"
         },
         {
-            "name": "sujalpatel/inttoenglish",
-            "version": "v1.0.4",
+            "name": "kyosifov/php-string-to-color",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sujalpatel2209/IntegerToEnglish.git",
-                "reference": "9704d0c2051cb63f6c4a35e42adc80081cd309f6"
+                "url": "https://github.com/KaloyanYosifov/php-string-to-color.git",
+                "reference": "8a4a19bb72e666a957705251c2ad6933af51f324"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sujalpatel2209/IntegerToEnglish/zipball/9704d0c2051cb63f6c4a35e42adc80081cd309f6",
-                "reference": "9704d0c2051cb63f6c4a35e42adc80081cd309f6",
+                "url": "https://api.github.com/repos/KaloyanYosifov/php-string-to-color/zipball/8a4a19bb72e666a957705251c2ad6933af51f324",
+                "reference": "8a4a19bb72e666a957705251c2ad6933af51f324",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "orchestra/testbench": "4.3.*",
-                "phpunit/phpunit": "^8.0"
+                "ext-json": "*",
+                "ext-mbstring": "*"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "SujalPatel\\IntToEnglish\\IntToEnglishServiceProvider"
-                    ],
-                    "aliases": {
-                        "IntToEnglish": "SujalPatel\\IntToEnglish\\IntToEnglishFacade"
-                    }
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "SujalPatel\\IntToEnglish\\": "src"
+                    "StringToColor\\": "app/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -106,24 +70,16 @@
             ],
             "authors": [
                 {
-                    "name": "Sujal Patel",
-                    "email": "sujalpatel022@gmail.com",
-                    "role": "Developer"
+                    "name": "Kaloyan Yosifov",
+                    "email": "kaloqn665@gmail.com"
                 }
             ],
-            "description": "Convert Integers to English Words",
-            "homepage": "https://github.com/sujalpatel2209/inttoenglish",
-            "keywords": [
-                "converter",
-                "int2english",
-                "inttoenglish",
-                "sujalpatel"
-            ],
+            "description": "Port of js string to color",
             "support": {
-                "issues": "https://github.com/sujalpatel2209/IntegerToEnglish/issues",
-                "source": "https://github.com/sujalpatel2209/IntegerToEnglish/tree/master"
+                "issues": "https://github.com/KaloyanYosifov/php-string-to-color/issues",
+                "source": "https://github.com/KaloyanYosifov/php-string-to-color/tree/1.0.0"
             },
-            "time": "2019-10-24T13:28:07+00:00"
+            "time": "2020-09-17T13:23:05+00:00"
         }
     ],
     "packages-dev": [],
