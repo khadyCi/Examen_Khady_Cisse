@@ -20,7 +20,7 @@ if (isset($_REQUEST['cifrar']))
     //echo $decrypted."\n";
     $stringToColor = new \StringToColor\StringToColor();
     $stringToColor = $stringToColor->handle($encrypted);
-    //echo $stringToColor;
+    //echo $stringToColorrr;
 }
 
 echo'
